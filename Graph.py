@@ -8,3 +8,8 @@ class Graph:
     def get_number(self):
         return len(self.__matrix)
     
+    def __str__(self):
+        result_string = ""
+        for row in self.__matrix:
+            result_string += ' '.join(map(str, row)) + '\n'
+        return result_string.strip()
