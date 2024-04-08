@@ -14,9 +14,9 @@ class GraphGenerator:
                     break
                 matrix[i][j] = random.randint(0, 1)
         
-        # filling the main diagonal with 1
+        # filling the main diagonal with 0
         for i in range(n_of_vertices):
-            matrix[i][i] = 1
+            matrix[i][i] = 0
 
         # as adj. matrix of undirected graph is symmentrical, 
         # so here mirroring the first half
