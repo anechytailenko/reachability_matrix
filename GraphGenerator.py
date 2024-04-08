@@ -3,7 +3,7 @@ from Graph import *
 
 class GraphGenerator:
     @staticmethod
-    def generate(n_of_vertices: int) -> Graph:
+    def generate(n_of_vertices: int, density: int) -> Graph:
         # filling the matrix with 0 by default
         matrix: list[list[int]] = [[0 for j in range(n_of_vertices)] for i in range(n_of_vertices)]
 
@@ -12,7 +12,7 @@ class GraphGenerator:
             for j in range(n_of_vertices):
                 if j > i:
                     break
-                matrix[i][j] = random.randint(0, 1)
+                matrix[i][j] = int(random.random() < (density / 100))
         
         # filling the main diagonal with 0
         for i in range(n_of_vertices):
@@ -26,3 +26,4 @@ class GraphGenerator:
                     matrix[j][i] = matrix[i][j]
         
         return Graph(matrix)
+    
