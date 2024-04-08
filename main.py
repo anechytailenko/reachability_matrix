@@ -11,6 +11,6 @@ graph = Graph([
     [1, 1, 1, 0, 0]
 ])
 
-print(WarshallAlgorithm.get_reachability_matrix(graph))
+Visualization.visualize_matrix(WarshallAlgorithm.get_reachability_matrix(graph))
 
-Visualization.visualize(graph)
+Visualization.visualize_graph(graph)
