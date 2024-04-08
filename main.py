@@ -1,13 +1,8 @@
 from Visualization import *
 from Graph import *
+from GraphGenerator import *
 
-graph = Graph([
-    [1, 0, 1, 0, 0],
-    [0, 1, 1, 0, 0],
-    [1, 1, 1, 1, 1],
-    [0, 0, 1, 1, 0],
-    [0, 0, 1, 0, 1]
-])
+graph = GraphGenerator.generate(6)
 
 print(graph)
 
