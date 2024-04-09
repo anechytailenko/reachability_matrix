@@ -18,6 +18,18 @@ class Visualization:
 
         plt.show()
     
-    def visualize_matrix(matrix: list[list[int]]) -> None:
-        for row in matrix:
-            print(row)
+    def visualize_matrix(matrix: list[list[int]], **optional) -> None:
+        # printing without labels (A, B, C, etc) if we don't have enough letters or we don't want to
+        if (len(matrix) > 26 or optional.get('labels') == False):
+            for row in matrix:
+                print(' '.join(map(str, row)))
+            return 
+        
+        # printing with labels
+        print(' ', end=' ')
+        for el in letters[0:len(matrix)]:
+            print(el, end=' ')
+        print()
+        for idx, row in enumerate(matrix):
+            print(letters[idx] + ' ' + ' '.join(map(str, row)))  
+            
