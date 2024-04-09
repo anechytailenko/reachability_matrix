@@ -9,6 +9,8 @@ print(graph.get_n_of_edges())
 
 reachability_matrix = WarshallAlgorithm.get_reachability_matrix(graph)
 
-Visualization.visualize_matrix(reachability_matrix, labels=True)
+# Visualization.visualize_matrix(reachability_matrix, labels=True)
 
-Visualization.visualize_graph(graph)
+print(graph.get_edges())
+
+Visualization.visualize_graph(graph, labels=False)

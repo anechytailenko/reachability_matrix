@@ -1,17 +1,20 @@
 class Graph:
     def __init__(self, matrix: list[list[int]]):
         self.__matrix = matrix # adjacency matrix (матриця суміжності)
-        self.__n_of_edges = 0
+        self.__edges: list[tuple[int]] = []
         self.__calc_edges()
     
     def __calc_edges(self):
         for i in range(self.get_number()):
             for j in range(self.get_number()):
-                if j > i:
-                    self.__n_of_edges += self.__matrix[i][j]
+                if j > i and self.__matrix[i][j] == 1:
+                    self.__edges.append((i, j))
 
     def get_n_of_edges(self):
-        return self.__n_of_edges
+        return len(self.__edges)
+
+    def get_edges(self):
+        return self.__edges
 
     def get_matrix(self):
         return self.__matrix
