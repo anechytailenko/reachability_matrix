@@ -3,7 +3,9 @@ from Graph import *
 from GraphGenerator import *
 from WarshallAlgorithm import *
 
-graph = GraphGenerator.generate(20, 10)
+graph = GraphGenerator.generate(7, 50)
+
+print(graph.get_n_of_edges())
 
 reachability_matrix = WarshallAlgorithm.get_reachability_matrix(graph)
 
