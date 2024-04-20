@@ -1,3 +1,5 @@
+import copy
+
 class Graph:
     def __init__(self, matrix: list[list[int]]):
         self.__matrix = matrix # adjacency matrix (матриця суміжності)
@@ -17,7 +19,7 @@ class Graph:
         return self.__edges
 
     def get_matrix(self):
-        return self.__matrix
+        return copy.deepcopy(self.__matrix)
     
     def get_number(self):
         return len(self.__matrix)
