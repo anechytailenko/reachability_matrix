@@ -6,3 +6,7 @@ def convert_datetime_to_float(text):
     microseconds = int(microseconds_str)
     total_microseconds = (minutes * 60 * 10**6) + (seconds * 10**6) + microseconds
     return total_microseconds
+
+def convert_microseconds_to_seconds(microseconds):
+    seconds = microseconds / 1000000
+    return seconds
