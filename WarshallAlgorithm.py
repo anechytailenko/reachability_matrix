@@ -1,12 +1,11 @@
-import copy
 from Graph import *
 from datetime import datetime
 from convertation import convert_datetime_to_float
 
 class WarshallAlgorithm:
     @staticmethod
-    def get_reachability_matrix(graph: Graph) :
-        matrix = copy.deepcopy(graph.get_matrix())
+    def get_reachability_matrix(graph: Graph) -> list[list[int]]:
+        matrix = graph.get_matrix()
         n_of_vertices = graph.get_number()
 
         start_time = convert_datetime_to_float(datetime.now().strftime("%M.%S.%f"))
