@@ -9,7 +9,7 @@ class WarshallAlgorithm:
         matrix = copy.deepcopy(graph.get_matrix())
         n_of_vertices = graph.get_number()
 
-        start_time = convert_str_to_float(datetime.now().strftime("%S.%f"))
+        start_time = convert_str_to_float(datetime.now().strftime("%M.%S.%f"))
 
         for k in range(0, n_of_vertices):
             for i in range(0, n_of_vertices):
@@ -19,7 +19,7 @@ class WarshallAlgorithm:
         for i in range(0, n_of_vertices):
             matrix[i][i] = 1
 
-        end_time = convert_str_to_float(datetime.now().strftime("%S.%f"))
+        end_time = convert_str_to_float(datetime.now().strftime("%M.%S.%f"))
         conduction_time = end_time - start_time
         
         return matrix, conduction_time

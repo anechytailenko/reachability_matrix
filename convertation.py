@@ -1,9 +1,8 @@
-import datetime
 
-
-def convert_str_to_float(text):
-    seconds_str, microseconds_str = text.split('.')
+def convert_datetime_to_float(text):
+    minutes_str, seconds_str, microseconds_str = text.split('.')
+    minutes = int(minutes_str)
     seconds = int(seconds_str)
     microseconds = int(microseconds_str)
-    total_microseconds = seconds * 10 ** 6 + microseconds
+    total_microseconds = (minutes * 60 * 10**6) + (seconds * 10**6) + microseconds
     return total_microseconds
